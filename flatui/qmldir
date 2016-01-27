@@ -1,0 +1,49 @@
+### qmldir ---
+##
+## Author: obeezzy
+## Created: Thu Oct 8 1:00:46 2015 (+0100)
+## Version:
+## Last-Updated:
+##           By:
+##     Update #: 45
+######################################################################
+##
+### Change Log:
+##
+######################################################################
+
+module FlatUI
+
+singleton FlatUI 1.0 FlatUI.qml
+FlatRadioButton 1.0 FlatRadioButton.qml
+FlatSlider 1.0 FlatSlider.qml
+FlatNavButton 1.0 FlatNavButton.qml
+FlatImage 1.0 FlatImage.qml
+FlatIconNavBar 1.0 FlatIconNavBar.qml
+FlatIconButton 1.0 FlatIconButton.qml
+FlatNumberNavBar 1.0 FlatNumberNavBar.qml
+FlatButton 1.0 FlatButton.qml
+FlatNumberNavButton 1.0 FlatNumberNavButton.qml
+FlatPillNavBar 1.0 FlatPillNavBar.qml
+FlatTopNavBar 1.0 FlatTopNavBar.qml
+FlatCheckBox 1.0 FlatCheckBox.qml
+FlatSwitch 1.0 FlatSwitch.qml
+FlatBoxSwitch 1.0 FlatBoxSwitch.qml
+FlatPrimaryButton 1.0 FlatPrimaryButton.qml
+FlatWarningButton 1.0 FlatWarningButton.qml
+FlatDefaultButton 1.0 FlatDefaultButton.qml
+FlatDangerButton 1.0 FlatDangerButton.qml
+FlatSuccessButton 1.0 FlatSuccessButton.qml
+FlatInverseButton 1.0 FlatInverseButton.qml
+FlatInfoButton 1.0 FlatInfoButton.qml
+FlatDropdown 1.0 FlatDropdown.qml
+HorizontalScrollBar 1.0 HorizontalScrollBar.qml
+VerticalScrollBar 1.0 VerticalScrollBar.qml
+FlatSelect 1.0 FlatSelect.qml
+FlatNavDropdown 1.0 FlatNavDropdown.qml
+FlatProgressBar 1.0 FlatProgressBar.qml
+FlatProgressCircle 1.0 FlatProgressCircle.qml
+FlatInput 1.0 FlatInput.qml
+FlatConstants 1.0 FlatConstants.qml
+FlatIconInput 1.0 FlatIconInput.qml
+FlatSearchInput 1.0 FlatSearchInput.qml
