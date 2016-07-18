@@ -1,15 +1,16 @@
 import QtQuick 2.4
 import QtQuick.Window 2.2
-import "flatui"
-import QtQuick.Controls 1.2
+import "flatui" as Flat
+import QtQuick.Controls 2.0
+import QtQuick.Controls 1.4 as OldControls
 
-Window {
+ApplicationWindow {
     id: window
     visible: true
     width: 680
     height: 480
 
-    ScrollView {
+    OldControls.ScrollView {
         width: mainContent.width
         height: window.height
 
@@ -44,9 +45,9 @@ Window {
                 text: "Flat UI"
                 width: contentWidth
                 height: contentHeight
-                color: FlatUI.midnightBlue
+                color: Flat.FlatUI.midnightBlue
                 font {
-                    family: FlatUI.latoBlackFont.name
+                    family: Flat.FlatUI.latoBlackFont.name
                     bold: true
                     pointSize: 50
                 }
@@ -64,9 +65,9 @@ Window {
                     text: "Basic elements"
                     width: contentWidth
                     height: contentHeight
-                    color: FlatUI.midnightBlue
+                    color: Flat.FlatUI.midnightBlue
                     font {
-                        family: FlatUI.latoRegularFont.name
+                        family: Flat.FlatUI.latoRegularFont.name
                         bold: true
                         pointSize: 30
                     }
@@ -76,9 +77,9 @@ Window {
                     text: "Buttons"
                     width: contentWidth
                     height: contentHeight
-                    color: FlatUI.midnightBlue
+                    color: Flat.FlatUI.midnightBlue
                     font {
-                        family: FlatUI.latoRegularFont.name
+                        family: Flat.FlatUI.latoRegularFont.name
                         bold: true
                         pointSize: 18
                     }
@@ -90,23 +91,23 @@ Window {
                     rowSpacing: 40
                     columnSpacing: 40
 
-                    FlatPrimaryButton {}
-                    FlatWarningButton {}
-                    FlatDefaultButton {}
-                    FlatDangerButton {}
-                    FlatSuccessButton {}
-                    FlatInverseButton {}
-                    FlatInfoButton {}
-                    FlatPrimaryButton {enabled: false; text: "Disabled Button"}
+                    Flat.PrimaryButton {}
+                    Flat.WarningButton {}
+                    Flat.DefaultButton {}
+                    Flat.DangerButton {}
+                    Flat.SuccessButton {}
+                    Flat.InverseButton {}
+                    Flat.InfoButton {}
+                    Flat.PrimaryButton {enabled: false; text: "Disabled Button"}
                 }
 
                 Text {
                     text: "Input"
                     width: contentWidth
                     height: contentHeight
-                    color: FlatUI.midnightBlue
+                    color: Flat.FlatUI.midnightBlue
                     font {
-                        family: FlatUI.latoRegularFont.name
+                        family: Flat.FlatUI.latoRegularFont.name
                         bold: true
                         pointSize: 18
                     }
@@ -115,15 +116,14 @@ Window {
                 Row {
                     spacing: 20
 
-                    FlatInput {placeholderText: "Inactive"}
-                    FlatInput {error: true; text: "Error"}
-                    FlatInput {success: true; text: "Success"}
-                    FlatInput {enabled: false; text: "Disabled"}
+                    Flat.Input {placeholderText: "Inactive"}
+                    Flat.Input {style.name: "error"; text: "Error"}
+                    Flat.Input {style.name: "success"; text: "Success"}
+                    Flat.Input {enabled: false; text: "Disabled"}
                 }
 
                 Row {
                     spacing: 200
-                    z: FlatUI.dropdownZ
 
                     Column {
                         spacing: 30
@@ -131,17 +131,17 @@ Window {
                             text: "Dropdown"
                             width: contentWidth
                             height: contentHeight
-                            color: FlatUI.midnightBlue
+                            color: Flat.FlatUI.midnightBlue
                             font {
-                                family: FlatUI.latoRegularFont.name
+                                family: Flat.FlatUI.latoRegularFont.name
                                 bold: true
                                 pointSize: 18
                             }
                         }
 
-                        FlatDropdown {
-                            text: "Default";
-                            dropdownHeight: 150
+                        Flat.Dropdown {
+//                            text: "Default";
+//                            dropdownHeight: 150
 
                             model: ListModel {
                                 ListElement {item: "Action"; separator: false}
@@ -158,23 +158,16 @@ Window {
                             text: "Select"
                             width: contentWidth
                             height: contentHeight
-                            color: FlatUI.midnightBlue
+                            color: Flat.FlatUI.midnightBlue
                             font {
-                                family: FlatUI.latoRegularFont.name
+                                family: Flat.FlatUI.latoRegularFont.name
                                 bold: true
                                 pointSize: 18
                             }
                         }
 
-                        FlatSelect {
-                            dropdownHeight: 150
-
-                            model: ListModel {
-                                ListElement {item: "Action"; separator: false}
-                                ListElement {item: "Another action"; separator: false}
-                                ListElement {item: "Something else here"; separator: false}
-                                ListElement {item: "Separated link"; separator: true}
-                            }
+                        Flat.Select {
+                            model: ["Spider-man", "Superman", "Batman"]
                         }
                     }
                 }
@@ -184,46 +177,47 @@ Window {
                     text: "Navbar"
                     width: contentWidth
                     height: contentHeight
-                    color: FlatUI.midnightBlue
+                    color: Flat.FlatUI.midnightBlue
                     font {
-                        family: FlatUI.latoRegularFont.name
+                        family: Flat.FlatUI.latoRegularFont.name
                         bold: true
                         pointSize: 18
                     }
                 }
 
-                FlatTopNavBar {
+                Flat.TopNavBar {
                     anchors.left: parent.left
                     anchors.right: parent.right
-                    searchBarVisible: true
+                    //searchBarVisible: true
 
                     Row {
                         anchors.top: parent.top
                         anchors.bottom: parent.bottom
 
-                        FlatNavButton {
+                        Flat.NavButton {
                             text: "Flat UI"
                             anchors.top: parent.top
                             anchors.bottom: parent.bottom
-                            pointSize: 18
+                            style.icon.font.pointSize: 18
+                            //pointSize: 18
                         }
 
-                        FlatNavButton {
+                        Flat.NavButton {
                             text: "Menu item"
                             anchors.top: parent.top
                             anchors.bottom: parent.bottom
-                            indicatorVisible: true
+                            //indicatorVisible: true
                         }
 
-                        FlatNavDropdown {
-                            text: "Messages"
+                        Flat.NavDropdown {
+                            //text: "Messages"
                             anchors.top: parent.top
                             anchors.bottom: parent.bottom
-                            dropdownHeight: 150
-                            width: textWidth + 30
+                            //dropdownHeight: 150
+                            //width: textWidth + 30
                         }
 
-                        FlatNavButton {
+                        Flat.NavButton {
                             text: "About us"
                             anchors.top: parent.top
                             anchors.bottom: parent.bottom
@@ -246,24 +240,24 @@ Window {
                             text: "Progress bars & Sliders"
                             width: contentWidth
                             height: contentHeight
-                            color: FlatUI.midnightBlue
+                            color: Flat.FlatUI.midnightBlue
                             font {
-                                family: FlatUI.latoRegularFont.name
+                                family: Flat.FlatUI.latoRegularFont.name
                                 bold: true
                                 pointSize: 18
                             }
                         }
 
-                        FlatProgressBar {
+                        Flat.ProgressBar {
                             value: slider.value / 100
                         }
 
-                        FlatSlider {
+                        Flat.Slider {
                             id: slider
-                            tickCount: 0
+                            //tickCount: 0
                         }
 
-                        FlatProgressCircle {
+                        Flat.ProgressCircle {
                             value: slider.value / 100
                         }
                     }
@@ -274,9 +268,9 @@ Window {
                             text: "Navigation"
                             width: contentWidth
                             height: contentHeight
-                            color: FlatUI.midnightBlue
+                            color: Flat.FlatUI.midnightBlue
                             font {
-                                family: FlatUI.latoRegularFont.name
+                                family: Flat.FlatUI.latoRegularFont.name
                                 bold: true
                                 pointSize: 18
                             }
@@ -285,45 +279,45 @@ Window {
                         Row {
                             spacing: 40
 
-                            FlatIconNavBar {
+                            Flat.IconNavBar {
                                 width: iconButtonRow.width
                                 Row {
                                     id: iconButtonRow
                                     anchors.top: parent.top
                                     anchors.bottom: parent.bottom
 
-                                    FlatIconButton {
+                                    Flat.IconButton {
                                         anchors.top: parent.top
                                         anchors.bottom: parent.bottom
-                                        text: FlatUI.glyphFont.clock
+                                        text: Flat.FlatUI.glyphFont.clock
                                     }
 
-                                    FlatIconButton {
+                                    Flat.IconButton {
                                         anchors.top: parent.top
                                         anchors.bottom: parent.bottom
-                                        text: FlatUI.glyphFont.camera
+                                        text: Flat.FlatUI.glyphFont.camera
                                     }
 
-                                    FlatIconButton {
+                                    Flat.IconButton {
                                         anchors.top: parent.top
                                         anchors.bottom: parent.bottom
-                                        text: FlatUI.glyphFont.heart
+                                        text: Flat.FlatUI.glyphFont.heart
                                     }
 
-                                    FlatIconButton {
+                                    Flat.IconButton {
                                         anchors.top: parent.top
                                         anchors.bottom: parent.bottom
-                                        text: FlatUI.glyphFont.eye
+                                        text: Flat.FlatUI.glyphFont.eye
                                     }
                                 }
                             }
 
-                            FlatPillNavBar {}
+                            Flat.PillNavBar {}
                         }
 
-                        FlatNumberNavBar {
-                            count: 50
-                            visibleCount: 8
+                        Flat.NumberNavBar {
+                            //count: 50
+                            //visibleCount: 8
                         }
                     }
                 }
@@ -337,29 +331,29 @@ Window {
                             text: "Checkboxes"
                             width: contentWidth
                             height: contentHeight
-                            color: FlatUI.midnightBlue
+                            color: Flat.FlatUI.midnightBlue
                             font {
-                                family: FlatUI.latoRegularFont.name
+                                family: Flat.FlatUI.latoRegularFont.name
                                 bold: true
                                 pointSize: 18
                             }
                         }
 
-                        FlatCheckBox {
+                        Flat.CheckBox {
                             text: "Unchecked"
                         }
 
-                        FlatCheckBox {
+                        Flat.CheckBox {
                             text: "Checked"
                             checked: true
                         }
 
-                        FlatCheckBox {
+                        Flat.CheckBox {
                             text: "Disabled unchecked"
                             enabled: false
                         }
 
-                        FlatCheckBox {
+                        Flat.CheckBox {
                             text: "Disabled checked"
                             checked: true
                             enabled: false
@@ -373,37 +367,35 @@ Window {
                             text: "Radio Buttons"
                             width: contentWidth
                             height: contentHeight
-                            color: FlatUI.midnightBlue
+                            color: Flat.FlatUI.midnightBlue
                             font {
-                                family: FlatUI.latoRegularFont.name
+                                family: Flat.FlatUI.latoRegularFont.name
                                 bold: true
                                 pointSize: 18
                             }
                         }
 
-                        ExclusiveGroup {
-                            id: radioGroup
-                        }
+                        ButtonGroup { id: radioGroup }
 
-                        FlatRadioButton {
-                            exclusiveGroup: radioGroup
+                        Flat.RadioButton {
+                            ButtonGroup.group: radioGroup
                             text: "Radio is off"
                         }
 
-                        FlatRadioButton {
-                            exclusiveGroup: radioGroup
+                        Flat.RadioButton {
+                            ButtonGroup.group: radioGroup
                             text: "Radio is on"
                             checked: true
                         }
 
-                        FlatRadioButton {
-                            exclusiveGroup: radioGroup
+                        Flat.RadioButton {
+                            ButtonGroup.group: radioGroup
                             text: "Disabled radio is off"
                             enabled: false
                         }
 
-                        FlatRadioButton {
-                            exclusiveGroup: radioGroup
+                        Flat.RadioButton {
+                            ButtonGroup.group: radioGroup
                             text: "Disabled radio is on"
                             checked: true
                             enabled: false
@@ -417,38 +409,45 @@ Window {
                             text: "Switches"
                             width: contentWidth
                             height: contentHeight
-                            color: FlatUI.midnightBlue
+                            color: Flat.FlatUI.midnightBlue
                             font {
-                                family: FlatUI.latoRegularFont.name
+                                family: Flat.FlatUI.latoRegularFont.name
                                 bold: true
                                 pointSize: 18
                             }
                         }
 
                         Row {
-                            spacing: 30
-                            FlatSwitch {}
-                            FlatSwitch {checked: true}
+                            spacing: 100
+                            Flat.Switch {}
+                            Flat.Switch {checked: true}
+                        }
+
+                        Row {
+                            spacing: 100
+                            Flat.BoxSwitch {}
+                            Flat.BoxSwitch {checked: true}
+                        }
+
+                        Row {
+                            spacing: 100
+                            Flat.Switch {enabled: false}
+                            Flat.Switch {enabled: false}
+
                         }
 
                         Row {
                             spacing: 30
-                            FlatBoxSwitch {}
-                            FlatBoxSwitch {checked: true}
-                        }
-
-                        Row {
-                            spacing: 30
-                            FlatSwitch {enabled: false}
-                            FlatSwitch {enabled: false}
-                            FlatIconInput {
+                            Flat.IconInput {
                                 placeholderText: "Enter user name"
-                                iconText: FlatUI.glyphFont.user
+                                style.icon.font.family: Flat.FlatUI.glyphFont.name
+                                style.icon.text: Flat.FlatUI.glyphFont.user
                             }
 
-                            FlatIconInput {
+                            Flat.IconInput {
                                 placeholderText: "Enter password"
-                                iconText: FlatUI.glyphFont.locked
+                                style.icon.font.family: Flat.FlatUI.glyphFont.name
+                                style.icon.text: Flat.FlatUI.glyphFont.locked
                                 echoMode: TextInput.Password
                             }
                         }
