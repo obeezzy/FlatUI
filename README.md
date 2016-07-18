@@ -1,7 +1,9 @@
-FlatUI-Controls-QML
+Flat UI Controls for QML
 ===================
 
-This is custom made and themed QML controls. The controls are made to look and behave just like [Flat UI Toolkit](http://designmodo.github.io/Flat-UI/). This repository is an improvement over Druage's repository (https://github.com/Druage/FlatUI-Controls-QML).
+This is an unofficial QML module that aims to replicate the look-and-feel and behavior of the [Flat UI Toolkit](http://designmodo.github.io/Flat-UI/). This repository is an improvement over Druage's repository (https://github.com/Druage/FlatUI-Controls-QML).
+
+**NOTE: Requires Qt 5.7.**
 
 
 ![ScreenShot](https://github.com/obeezzy/FlatUI/blob/master/screenshots/screenshot_top.jpg)
